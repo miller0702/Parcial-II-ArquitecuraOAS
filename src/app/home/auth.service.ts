@@ -12,7 +12,7 @@ export class AuthService {
 
   getToken (informacion : { email : string , password: string}) {
     //return this.http.get(`${this.baseUrl}${informacion}`);
-    return this.http.post(`${this.baseUrl}`, informacion);
+    return this.http.post<{token_auth : string, access_token: string}>(`${this.baseUrl}`, informacion);
   }
 
 

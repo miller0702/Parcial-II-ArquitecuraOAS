@@ -15,7 +15,7 @@ export class WelcomeComponent implements OnInit {
     this.http.getToken({
       "email": "john@mail.com",
       "password": "changeme"
-    }).subscribe((res : any) :void => {
+    }).subscribe((res : {token_auth : string, access_token: string}) :void => {
 
       localStorage.setItem('token_auth' , res.access_token);
     })
