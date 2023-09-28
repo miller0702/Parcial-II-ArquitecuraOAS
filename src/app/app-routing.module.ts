@@ -14,9 +14,7 @@ const roters : Routes  =[
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(roters),
-    // HomeModule,
-    // ProductoModule
+    RouterModule.forRoot(roters), 
   ],
   exports: [
     RouterModule
