@@ -1,6 +1,8 @@
+import { LoaderService } from './../../shared/loader.service';
 import { HttpEvent } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-welcome',
@@ -9,7 +11,7 @@ import { AuthService } from '../auth.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor (private http : AuthService) {}
+  constructor (private http : AuthService, private load : LoaderService) {}
 
   ngOnInit(){
     this.http.getToken({
@@ -19,6 +21,11 @@ export class WelcomeComponent implements OnInit {
 
       localStorage.setItem('token_auth' , res.access_token);
     })
+  }
+
+  active(){
+    console.log("11111111111111111111");
+    this.load.setActive();
   }
 
 }
