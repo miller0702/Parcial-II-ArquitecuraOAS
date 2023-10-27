@@ -1,3 +1,4 @@
+import { LoaderService } from './../public/loader.service';
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -10,10 +11,11 @@ import { Observable , finalize} from 'rxjs';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private loader : LoaderService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let cloneReq = request;
+    this.loader.setActive();
 
     if(localStorage.getItem("token_auth")){
       cloneReq =  request.clone({
@@ -21,11 +23,10 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization : localStorage.getItem("token_auth")!
         }
       })
-    }
-    console.log(localStorage.getItem("token_auth"));
+    } 
     return next.handle(cloneReq).pipe(
       finalize(()=>{
-
+        this.loader.setInactive()
       })
     );
   }

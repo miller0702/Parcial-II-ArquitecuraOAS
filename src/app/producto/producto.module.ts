@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { ProductoRoutingModule } from './producto-routing.module';
-import { ListarProductoComponent } from './listar-producto/listar-producto.component';
+import { ProductoComponent } from './pages/producto/producto.component';
+import { ListaComponent } from './components/lista/lista.component';
+import { CrearComponent } from './components/crear/crear.component';
+import { ActualizarComponent } from './components/actualizar/actualizar.component';
+import { EliminarComponent } from './components/eliminar/eliminar.component';
 
 @NgModule({
   declarations: [
-    ListarProductoComponent
+    ProductoComponent,
+    ListaComponent,
+    CrearComponent,
+    ActualizarComponent,
+    EliminarComponent
   ],
   imports: [
     CommonModule,
-    ProductoRoutingModule
+    ProductoRoutingModule,
+    NgOptimizedImage
   ]
 })
 export class ProductoModule { }

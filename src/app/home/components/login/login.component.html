@@ -1,0 +1,11 @@
+<form [formGroup]="form" (submit)="enviar()">
+    <div ngClass="group-input">
+        <label>Usuario</label>
+        <input name="email" id="usuario" formControlName="email" /> 
+    </div>
+    <div ngClass="group-input">
+        <label>Contraseña</label>
+        <input name="password" id="password" type="password" formControlName="password" /> 
+    </div>
+    <button type="submit">enviar</button>
+</form>

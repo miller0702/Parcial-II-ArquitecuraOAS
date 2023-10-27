@@ -1,0 +1,14 @@
+<p>producto works!</p>
+
+
+<div ngClass="grid">
+   
+    <ng-container  *ngFor="let p of elementos">
+        <app-lista>
+            <div titulo>{{ p.title }}</div>
+            <div descripcion>{{ p.description }}</div>
+            <div precio>{{ p.price }}</div>
+            <div img><img [ngSrc]="p.images[0]" width="500" height="500"  /> </div>
+        </app-lista>
+    </ng-container>
+</div>

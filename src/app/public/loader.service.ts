@@ -12,11 +12,9 @@ export class LoaderService {
 
   setActive(){ 
     this.active$.next('active')
-    this.activeDos = 'active'
   }
 
   setInactive(){
     this.active$.next('')
-    this.activeDos = ''
   }
 }
