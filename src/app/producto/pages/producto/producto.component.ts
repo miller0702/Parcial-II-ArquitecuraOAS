@@ -14,9 +14,18 @@ export class ProductoComponent implements OnInit {
   elementos :  ProductoInterface[] = [];
 
   ngOnInit() : void{
-    this.service.getAll().subscribe((res :any)=>{
-      this.elementos = res;
-    });
+    this.service.getAll().subscribe(
+      (res :any)=>{
+        this.elementos = res;
+      } , 
+      (ERR :any)=> {
+        console.log("error");
+      },
+      ()=>{
+        console.log("finis");
+      }
+
+    );
     
   }
 }

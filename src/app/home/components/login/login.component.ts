@@ -22,7 +22,7 @@ export class LoginComponent {
       localStorage.setItem('token_auth',arg.access_token);
       this.act.navigate(["producto"])
     },(err : any)=>{
-
+      console.log(err);
     });
     
   }

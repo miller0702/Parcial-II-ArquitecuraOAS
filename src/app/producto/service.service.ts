@@ -1,3 +1,6 @@
+import { ProductoInterface } from './../interface/producto-interface';
+import { Observable } from 'rxjs';
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -8,9 +11,9 @@ export class ServiceService {
 
   constructor(private http : HttpClient) {}
   
-  baseUrl = "https://api.escuelajs.co/api/v1/products";
-
-  getAll(){
+  baseUrl = environment.api +"/products";
+ 
+  getAll() : Observable<any>{
     return this.http.get(this.baseUrl)
   }
 
