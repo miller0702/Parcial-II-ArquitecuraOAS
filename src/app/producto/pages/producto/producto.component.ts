@@ -1,6 +1,7 @@
 import { ProductoInterface } from './../../../interface/producto-interface';
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../service.service';
+import { ListaComponent } from '../../components/lista/lista.component';
 
 @Component({
   selector: 'app-producto',
@@ -17,7 +18,7 @@ export class ProductoComponent implements OnInit {
     this.service.getAll().subscribe(
       (res :any)=>{
         this.elementos = res;
-      } , 
+      } ,
       (ERR :any)=> {
         console.log("error");
       },
@@ -26,6 +27,7 @@ export class ProductoComponent implements OnInit {
       }
 
     );
-    
+
   }
+
 }

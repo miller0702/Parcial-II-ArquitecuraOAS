@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http  : HttpClient) { }
 
-  baseUrl = "http://127.0.0.1:3100/auth";
+  baseUrl = "https://api.escuelajs.co/api/v1/auth/login";
 
   getToken (informacion : AuthInterface | any ) {
     return this.http.post<TokenInterface>(`${this.baseUrl}`, informacion);

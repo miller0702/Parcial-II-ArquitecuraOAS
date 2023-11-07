@@ -10,9 +10,9 @@ import { Injectable } from '@angular/core';
 export class ServiceService {
 
   constructor(private http : HttpClient) {}
-  
+
   baseUrl = environment.api +"/products";
- 
+
   getAll() : Observable<any>{
     return this.http.get(this.baseUrl)
   }
@@ -20,17 +20,16 @@ export class ServiceService {
   getOne(id : string){
     return this.http.get(`${this.baseUrl}/${id}`)
   }
-
-  postProducto(){
-
+  postProducto(producto: ProductoInterface): Observable<any> {
+    return this.http.post(this.baseUrl, producto);
   }
 
-  putProducto(){
-
+  putProducto(producto: ProductoInterface): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${producto.id}`, producto);
   }
 
-  deleteProducto(){
-
+  deleteProducto(id: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
 

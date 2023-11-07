@@ -1,18 +1,33 @@
-<p>producto works!</p>
-
-
-<div ngClass="grid">
-   
-    <ng-container *ngIf="elementos.length > 0 ; else vacio" >
-        <app-lista *ngFor="let p of elementos">
-            <div titulo>{{ p.title }}</div>
-            <div descripcion>{{ p.description }}</div>
-            <div precio>{{ p.price }}</div>
-            <div img><img [ngSrc]="p.images[0]" width="500" height="500"  /> </div>
-        </app-lista>
-    </ng-container>
-
-    <ng-template #vacio>esta vacio</ng-template>
+<div class="px-4 py-4">
+  <div class="container-fluid">
+    <h1><i class="fa-solid fa-clipboard-list" style="color: #000000;"></i> LISTA DE PRODUCTOS</h1><br>
+    <button class="btn btn-success" style="background-color: #ee7724 !important; border: none;  transition: background-color 0.5s ease-in-out"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> Nuevo Producto</button><br>
+    <table class="table align-middle mb-0 bg-white">
+      <thead class="bg-light">
+        <tr>
+          <th>#</th>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of elementos">
+          <td>{{ elementos.indexOf(p) + 1 }}</td>
+          <td><img [ngSrc]="p.images[0]" width="50" height="50" class="rounded-circle" /></td>
+          <td titulo>{{ p.title }}</td>
+          <td descripcion>{{ p.description }}</td>
+          <td precio>${{ p.price }}</td>
+          <td accion>
+            <button class="btn btn-primary m-1"><i class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
+            <button class="btn btn-warning m-1"><i class="fa-solid fa-pen-to-square"
+                style="color: #ffffff;"></i></button>
+            <button class="btn btn-danger"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-

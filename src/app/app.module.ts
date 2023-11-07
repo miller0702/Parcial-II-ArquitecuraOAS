@@ -9,6 +9,8 @@ import { LoaderComponent } from './public/loader/loader.component';
 import { HeaderComponent } from './public/header/header.component';
 import { FooterComponent } from './public/footer/footer.component';
 import { NgOptimizedImage } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { NgOptimizedImage } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    TooltipModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi: true}
