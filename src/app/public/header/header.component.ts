@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  getToken ?:string | null = "";
+
+  constructor( private router : Router){}
+
+
+  logout(){
+    localStorage.removeItem("token_access");
+    this.router.navigate(["home"]);
+  }
 }

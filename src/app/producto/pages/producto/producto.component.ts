@@ -2,6 +2,7 @@ import { ProductoInterface } from './../../../interface/producto-interface';
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../service.service';
 import { ListaComponent } from '../../components/lista/lista.component';
+import { HeaderComponent } from 'src/app/public/header/header.component';
 
 @Component({
   selector: 'app-producto',

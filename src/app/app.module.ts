@@ -17,7 +17,6 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
   declarations: [
     AppComponent,
     LoaderComponent,
-    HeaderComponent,
     FooterComponent
   ],
   imports: [

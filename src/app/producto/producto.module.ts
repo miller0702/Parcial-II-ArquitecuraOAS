@@ -7,6 +7,7 @@ import { ListaComponent } from './components/lista/lista.component';
 import { CrearComponent } from './components/crear/crear.component';
 import { ActualizarComponent } from './components/actualizar/actualizar.component';
 import { EliminarComponent } from './components/eliminar/eliminar.component';
+import { HeaderComponent } from '../public/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import { EliminarComponent } from './components/eliminar/eliminar.component';
     ListaComponent,
     CrearComponent,
     ActualizarComponent,
-    EliminarComponent
+    EliminarComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
     ProductoRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
   ]
 })
 export class ProductoModule { }

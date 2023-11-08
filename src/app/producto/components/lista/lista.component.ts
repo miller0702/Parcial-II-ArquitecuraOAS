@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./lista.component.scss']
 })
 export class ListaComponent {
-
+  
   ngOnChanges(){
     console.log("1");
   }
+
+
+
 }

@@ -8,8 +8,9 @@ import { authGuard } from './guards/auth.guard';
 
 
 const roters : Routes  =[
-  { path : '' , loadChildren : ()=>{return import("./home/home.module").then(m => m.HomeModule)}},
+  { path : 'home' , loadChildren : ()=>{return import("./home/home.module").then(m => m.HomeModule)}},
   { path : 'producto' , canActivate: [authGuard],  loadChildren : ()=>{return import("./producto/producto.module").then(m => m.ProductoModule)}},
+  {path : '', pathMatch: 'full', redirectTo:'/home'}
 ]
 
 @NgModule({
